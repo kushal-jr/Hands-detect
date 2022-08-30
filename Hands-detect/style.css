@@ -1,0 +1,102 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.abs {
+  position: absolute;
+}
+
+body {
+  bottom: 0;
+  font-family: "Titillium Web", sans-serif;
+  color: rgb(255, 255, 255);
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: 0px 0px;
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  max-height: 100%;
+}
+
+.input_video {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.input_video.selfie {
+  transform: scale(-1, 1);
+}
+
+.input_image {
+  position: absolute;
+}
+
+.canvas-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.output_canvas {
+  width: 100%;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.control-panel {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.loading {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  -webkit-backface-visibility: hidden;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 1s;
+}
+.loading .message {
+  font-size: larger;
+  color: rgb(0, 0, 0);
+}
+.loading .spinner {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  animation:spin .65s linear infinite ;
+  border: 5px solid #00000000;
+  border-top: 5px solid #fa0101;
+  border-radius: 100%;
+}
+
+.loaded .loading {
+  opacity: 0;
+}
+
